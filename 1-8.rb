@@ -7,8 +7,8 @@
 1.
 컨트롤러 생성:
 rails g controller 이름 (rails generate controller 이름)
--> p_1-8/app/controllers/home_controller.rb 생성
--> p_1-8/app/views/home 폴더 생성
+-> ruby_vc_1-8/app/controllers/home_controller.rb 생성
+-> ruby_vc_1-8/app/views/home 폴더 생성
 
 
 2. home_controller에 함수 작성
@@ -16,7 +16,7 @@ rails g controller 이름 (rails generate controller 이름)
 3. app/views/home에 함수에 해당하는 .html.erb 파일들 생성 
 
 action에서는 데이터를 처리(데이터 가공)하고 ,view에서는 결과를 보여준다
-단, action 이름 == view 이름
+단, action 이름 == view 이름 (연관시켜주기 위해)
 
 * xxx.html.erb
 ruby 코드를 삽입할 수 있는 html의 확장판 
