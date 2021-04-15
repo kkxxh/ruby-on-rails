@@ -1,0 +1,23 @@
+<h1>글 쓰기</h1>
+<p>Find me in app/views/home/new.html.erb</p>
+
+
+<!--method를 정의해주지 않으면 get방식(url로 정보가 다 보임)으로 취급-->
+<!--
+<form action="/home/create" method="get">
+
+    제목 : <input type = 'text' name ="post_title"><br>
+    내용 : <textarea name ="post_content"></textarea><br><br>
+    <input type="submit" value="작성">
+
+</form>
+
+-->
+
+<form action="/home/create" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    제목 : <input type = 'text' name ="post_title"><br>
+    내용 : <textarea name ="post_content"></textarea><br><br>
+    <input type="submit" value="작성">
+
+</form>
