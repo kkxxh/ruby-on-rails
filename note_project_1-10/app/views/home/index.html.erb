@@ -6,6 +6,7 @@
 <%Post.all.each do |x|%> 
   제목 : <%=x.title%> <br> 
   내용 : <%=x.content%> <br> 
+  <a href="/home/destroy/<%=x.id%>">[삭제]</a> <br>
   ____________________________<br> 
 <% end %> 
 

@@ -16,4 +16,16 @@ class HomeController < ApplicationController
     redirect_to "/home/index" #돌아가고싶은 페이지
   end
 
+  #전체 게시물 삭제
+  # def destroy
+  #   Post.destroy_all
+  #   redirect_to "/home/index"
+  # end
+
+  def destroy
+    @post = Post.find(params[:post_id]) #삭제할 특정 id를 찾음
+    @post.destroy
+    redirect_to "/home/index"
+  end
+
 end
