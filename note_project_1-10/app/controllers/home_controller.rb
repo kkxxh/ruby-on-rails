@@ -28,4 +28,21 @@ class HomeController < ApplicationController
     redirect_to "/home/index"
   end
 
+  def edit
+    #수정하는 양식에 이전에 썼던 특정 내용 불러오기
+    @post =Post.find(params[:post_id]) #특정 게시물이 무엇인지 받아옴
+  end
+
+
+  def update
+    #이전 글을 수정한 뒤 새로운 내용으로 업데이트
+    #@post를 쓰지 않는 이유 : update는 view가 따로 없기 때문에 사용할 필요가 없음,@를 붙여도 상관없음
+    post = Post.find(params[:post_id])
+    post.title = params[:post_title]
+    post.content =params[:post_content]
+    post.save
+
+    redirect_to '/home/index'
+  end
+
 end
