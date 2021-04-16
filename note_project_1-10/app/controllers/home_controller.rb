@@ -13,7 +13,7 @@ class HomeController < ApplicationController
     @post.content = params[:post_content] #post_content의 내용을 content행에 추가
     @post.save #테이블에 써준 내용을 모두 저장
 
-    redirect_to 'home/index'
+    redirect_to "/home/index" #돌아가고싶은 페이지
   end
 
 end
