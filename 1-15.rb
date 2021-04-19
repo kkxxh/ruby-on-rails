@@ -29,4 +29,13 @@ RESTful = REprentational State Transfer(무엇(resource)을 어떻게(HTTP metho
 resource : crud 할 수 있는 정보
 HTTP method : 리소스들이 하게되는 행위, 추출(GET), 생성(POST), 변경(PUT/PATCH), 제거(DELETE)
 
+
+app/view/posts/index.html.erb
+  <td><%= link_to 'Show', post %></td> 
+  <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+post는 post_path(id:post.id) 또는 post_path(post)와 같음
+따로 method를 안써주면 기본 메소드는 get
+
 =end
