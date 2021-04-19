@@ -9,11 +9,15 @@ Rails.application.routes.draw do
   #get 'home/create'
   post 'home/create'
 
-  get 'home/destroy/:post_id' => 'home#destroy'
+  
+  #get 'home/destroy/:post_id' => 'home#destroy'
+  get '/home/destroy/:post_id' => 'home#destroy',as: 'post_destroy'
 
   get 'home/edit/:post_id' => 'home#edit'
 
   post 'home/update/:post_id' => 'home#update'
+
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
