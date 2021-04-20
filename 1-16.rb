@@ -35,4 +35,4 @@ form_for
   #app/controllers/posts_controller.rb
   #def edit과 def destroy가 작업을 덜 처리하는 것 같다? -> before_action을 통해 이미 구현이 되어있음
   before_action :set_post, only: %i[ show edit update destroy ] #이 때, show, edit, update, destroy 모두 하나의 특정 게시물에 대한 행위
-
+  #-> 반복되는 코드를 줄이기 위함
