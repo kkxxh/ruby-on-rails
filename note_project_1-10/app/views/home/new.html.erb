@@ -21,3 +21,14 @@
     <input type="submit" value="작성">
 
 </form>
+<br><br>
+
+
+<%=form_tag(posts_path) do %>
+    <%= label_tag 'post_title', '제목'%> <!--제목을 클릭 시, text_field로 커서가 움직임-->
+    <%=text_field_tag('post_title',nil)%><br>
+    <!--제목 : <%=text_field_tag 'post_title'%><br>과 동일 -->
+    <%= label_tag 'post_content', '내용'%>
+    <%=text_area_tag('post_content',nil)%><br>
+    <%=submit_tag '작성'%>
+<%end%>
