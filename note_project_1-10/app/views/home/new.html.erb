@@ -32,3 +32,17 @@
     <%=text_area_tag('post_content',nil)%><br>
     <%=submit_tag '작성'%>
 <%end%>
+
+
+<br><br>
+
+
+<%=form_for(@post, url:posts_path) do |f|%>
+    <%=f.label :title, '제목' %>
+    <%=f.text_field :title %> <br>
+    
+    <%=f.label :content, '내용' %>
+    <%=f.text_area :content %> <br>
+
+    <%=f.submit 'form_for제출' %>
+<%end%>

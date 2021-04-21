@@ -3,7 +3,10 @@ class HomeController < ApplicationController
     @posts = Post.all
   end
 
+
+  #form_for를 위함
   def new
+    @post = Post.new
   end
 
 
@@ -13,8 +16,21 @@ class HomeController < ApplicationController
     @post.content = params[:post_content] #post_content의 내용을 content행에 추가
     @post.save #테이블에 써준 내용을 모두 저장
 
-    redirect_to "/home/index" #돌아가고싶은 페이지
+    #redirect_to "/home/index" #돌아가고싶은 페이지
   end
+
+
+    #form_for를 위함(params가 두번 쌓여있으니까 두번 까주기)
+  def create #테이블에 글 추가
+    @post = Post.new #테이블 한 행 추가
+    @post.title = params[:post][:title] #post_title의 내용을 title행에 추가
+    @post.content = params[:post][:content] #post_content의 내용을 content행에 추가
+    @post.save #테이블에 써준 내용을 모두 저장
+
+    #redirect_to "/home/index" #돌아가고싶은 페이지
+  end
+
+
 
   #전체 게시물 삭제
   # def destroy
