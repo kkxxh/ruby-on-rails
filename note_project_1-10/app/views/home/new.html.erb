@@ -37,7 +37,7 @@
 <br><br>
 
 
-<%=form_for(@post, url:posts_path) do |f|%>
+<%=form_for(@post) do |f|%>
     <%=f.label :title, '제목' %>
     <%=f.text_field :title %> <br>
     
