@@ -1,0 +1,26 @@
+ <!--new와 edit처럼 코드가 겹칠 때, 같은 코드를 여러번 쓰는 것을 방지 -> app/view/home/ _form.html.erb 생성 -->
+
+
+
+<!--new.html.erb-->
+<%=form_for(@post) do |f|%>
+    <%=f.label :title, '제목' %>
+    <%=f.text_field :title %> <br>
+    
+    <%=f.label :content, '내용' %>
+    <%=f.text_area :content %> <br>
+
+    <%=f.submit 'form_for제출' %>
+<%end%>
+
+
+<!--edit.html.erb-->
+<%=form_for(@post, method:'patch') do |f| %>
+    <%=f.label :title, '제목'%>
+    <%=f.text_field :title %> <br>
+
+    <%=f.label :content, '내용'%>
+    <%=f.text_area :content %> <br>
+
+    <%=f.submit '제출' %> 
+<%end%>

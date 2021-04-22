@@ -37,6 +37,8 @@
 <br><br>
 
 
+<!--_form.html.erb에 옮기고 주석처리-->
+<!--
 <%=form_for(@post) do |f|%>
     <%=f.label :title, '제목' %>
     <%=f.text_field :title %> <br>
@@ -46,3 +48,8 @@
 
     <%=f.submit 'form_for제출' %>
 <%end%>
+-->
+
+
+<%=render 'form'%>
+<!--'form'은 _form.html.erb를 의미-->

@@ -18,6 +18,10 @@
 <%end%>    
 
 
+<%=render 'form'%>
+
+<!--_form.html.erb에 옮기고 주석처리-->
+<!--
 <%=form_for(@post, method:'patch') do |f| %>
     <%=f.label :title, '제목'%>
     <%=f.text_field :title %> <br>
@@ -25,5 +29,6 @@
     <%=f.label :content, '내용'%>
     <%=f.text_area :content %> <br>
 
-    <%=f.submit '제출' %> 
+    <%=f.submit '제출(주석)' %> 
 <%end%>
+-->
