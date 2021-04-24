@@ -9,11 +9,20 @@
   <a href="/home/destroy/<%=x.id%>">[ 삭제1 ]</a> 
 
  <%# <%=link_to("[ 삭제2 ]", "/home/destroy/#{x.id}")%> <%#route바꾸기전%>
+
+
   <%=link_to("[ 삭제2 ]", post_destroy_path(post_id:x.id) ) %>
-  <%=link_to(post_destroy_path(post_id:x.id) ) do%> <%# text가 아닌 버튼을 넣고싶다 %>
+  
+  
+  <%=link_to(post_path(id:x.id), method: :delete) do%> <%# text가 아닌 버튼을 넣고싶다 %>
     <button>삭제2</button>
   <%end%>
+
+ 
   <a href="/home/edit/<%=x.id%>">[ 수정 ]</a> <br> 
+  <%=link_to(edit_post_path(p.id)) do %>
+    <button><수정2</button>
+  <%end%>
   ____________________________<br> 
 <% end %> 
 

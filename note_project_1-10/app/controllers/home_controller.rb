@@ -27,7 +27,7 @@ class HomeController < ApplicationController
     @post.content = params[:post][:content] #post_content의 내용을 content행에 추가
     @post.save #테이블에 써준 내용을 모두 저장
 
-    redirect_to "/home/index" #돌아가고싶은 페이지
+    redirect_to posts_path #돌아가고싶은 페이지
   end
 
 
@@ -39,15 +39,15 @@ class HomeController < ApplicationController
   # end
 
   def destroy
-    @post = Post.find(params[:post_id]) #삭제할 특정 id를 찾음
+    @post = Post.find(params[:id]) #삭제할 특정 id를 찾음
     @post.destroy
-    redirect_to "/home/index"
+    redirect_to posts_path
   end
 
 
   def edit
     #수정하는 양식에 이전에 썼던 특정 내용 불러오기
-    @post =Post.find(params[:post_id]) #특정 게시물이 무엇인지 받아옴
+    @post =Post.find(params[:id]) #특정 게시물이 무엇인지 받아옴
   end
 
   # #form_for 외
@@ -64,12 +64,11 @@ class HomeController < ApplicationController
 
     #form_for를 위함
   def update
-    post = Post.find(params[:post_id])
+    post = Post.find(params[:id])
     post.title = params[:post][:title]
     post.content =params[:post][:content]
     post.save
 
-    redirect_to '/home/index'
-  end
+    redirect_to posts_path
 
 end
