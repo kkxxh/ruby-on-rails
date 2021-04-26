@@ -1,4 +1,5 @@
 #scaffold처럼 변경
+
 =begin
 form_for로 내용을 받아올 때, 이상한 것을 받아오지 않기 위해 어떤 것을 받아와라는 내용을 정해줌
 -> private으로 (home_controller에 post_params함수 생성)
